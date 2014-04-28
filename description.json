@@ -1,0 +1,8 @@
+{
+	"api_name":"dreamteam",
+	"name":"DreamTeam",
+	"description":"Project & Document Management, Resource Management, Collaborative Calendaring, Time & Expense, Portfolio Reporting and Project Workflow",
+	"is_active":1,
+	"url":"https://www.dreamfactory.net/dsp/project_manager.html?dsp_session_id={session_id}&dsp_user_id={user_id}&dsp_user_email={email}&dsp_full_name={display_name}&dsp_app_name={app_name}&dsp_server_url={server_url}",
+	"is_url_external":1
+}

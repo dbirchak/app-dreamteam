@@ -1,0 +1,5417 @@
+{
+    "table": [
+        {
+            "name":       "Account",
+            "label":      "Account",
+            "plural":     "Accounts",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Account ID",
+                    "type":  "id"
+                },
+                {
+                    "name":     "AnnualRevenue",
+                    "label":    "Annual Revenue",
+                    "type":     "money",
+                    "decimals": 0
+                },
+                {
+                    "name":   "BillingCity",
+                    "label":  "Billing City",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "BillingCountry",
+                    "label":  "Billing Country",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "BillingPostalCode",
+                    "label":  "Billing Postal Code",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "BillingState",
+                    "label":  "Billing State",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "BillingStreet",
+                    "label":  "Billing Street",
+                    "type":   "string"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":   "DunsNumber",
+                    "label":  "DUNS Number",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":  "Fax",
+                    "label": "Fax",
+                    "type":  "string"
+                },
+                {
+                    "name":       "Industry",
+                    "label":      "Industry",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Agriculture", "Apparel", "Banking", "Biotechnology", "Chemicals", "Communications", "Construction", "Consulting", "Education",
+                        "Electronics", "Energy", "Engineering", "Entertainment", "Environmental", "Finance", "Food &amp; Beverage", "Government", "Healthcare",
+                        "Hospitality", "Insurance", "Machinery", "Manufacturing", "Media", "Not For Profit", "Recreation", "Retail", "Shipping", "Software",
+                        "Technology", "Telecommunications", "Transportation", "Utilities", "Other"
+                    ]
+                },
+                {
+                    "name":  "IsPartner",
+                    "label": "Partner Account",
+                    "type":  "boolean"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Account Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     255
+                },
+                {
+                    "name":  "NumberOfEmployees",
+                    "label": "Employees",
+                    "type":  "int"
+                },
+                {
+                    "name":       "Ownership",
+                    "label":      "Ownership",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Public", "Private", "Startup", "Partnership", "Corporation", "Sole Proprietorship", "Cooperative", "Subsidiary", "Other"
+                    ]
+                },
+                {
+                    "name":      "ParentId",
+                    "label":     "Parent ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Phone",
+                    "label": "Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":       "Rating",
+                    "label":      "Rating",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Hot", "Warm", "Cold"
+                    ]
+                },
+                {
+                    "name":   "ShippingCity",
+                    "label":  "Shipping City",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "ShippingCountry",
+                    "label":  "Shipping Country",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "ShippingPostalCode",
+                    "label":  "Shipping Postal Code",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "ShippingState",
+                    "label":  "Shipping State",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "ShippingStreet",
+                    "label":  "Shipping Street",
+                    "type":   "string"
+                },
+                {
+                    "name":   "SicCode",
+                    "label":  "SIC Code",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":   "Site",
+                    "label":  "Account Site",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":   "TickerSymbol",
+                    "label":  "Ticker Symbol",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":       "Type",
+                    "label":      "Account Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Prospect", "Customer - Direct", "Customer - Channel", "Channel Partner / Reseller", "Installation Partner", "Manufacturing Partner",
+                        "Other"
+                    ]
+                },
+                {
+                    "name":  "Website",
+                    "label": "Website",
+                    "type":  "text"
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "AccountContactRole",
+            "label":      "Contact Role",
+            "plural":     "Contact Roles",
+            "name_field": "",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Contact Role ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":       "AccountId",
+                    "label":      "Account ID",
+                    "allow_null": false,
+                    "type":       "reference",
+                    "ref_table":  "Account",
+                    "ref_field":  "Id"
+                },
+                {
+                    "name":       "ContactId",
+                    "label":      "Contact ID",
+                    "allow_null": false,
+                    "type":       "reference",
+                    "ref_table":  "Contact",
+                    "ref_field":  "Id"
+                },
+                {
+                    "name":       "Role",
+                    "label":      "Role",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Business User", "Economic Buyer", "Decision Maker", "Evaluator", "Executive Sponsor", "Influencer", "Technical Buyer",
+                        "Reseller Contact", "Board Member", "Champion", "Critic", "Neutral", "Other"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":       "Attachment",
+            "label":      "Attachment",
+            "plural":     "Attachments",
+            "name_field": "Name",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Attachment ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":      "AccountId",
+                    "label":     "Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "CampaignId",
+                    "label":     "Campaign ID",
+                    "type":      "reference",
+                    "ref_table": "Campaign",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "CaseId",
+                    "label":     "Case ID",
+                    "type":      "reference",
+                    "ref_table": "Case",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "ContactId",
+                    "label":     "Contact ID",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "ContentType",
+                    "label":  "Content Type",
+                    "type":   "string",
+                    "length": 120
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "IsPrivate",
+                    "label": "Private",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "LeadId",
+                    "label":     "Lead ID",
+                    "type":      "reference",
+                    "ref_table": "Lead",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Attachment Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":      "OpportunityId",
+                    "label":     "Opportunity ID",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "SolutionId",
+                    "label":     "Solution ID",
+                    "type":      "reference",
+                    "ref_table": "Solution",
+                    "ref_field": "Id"
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "Campaign",
+            "label":      "Campaign",
+            "plural":     "Campaigns",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Campaign ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":     "ActualCost",
+                    "label":    "Actual Cost",
+                    "type":     "money",
+                    "decimals": 0
+                },
+                {
+                    "name":     "BudgetedCost",
+                    "label":    "Budgeted Cost",
+                    "type":     "money",
+                    "decimals": 0
+                },
+                {
+                    "name":  "ConvertedLeads",
+                    "label": "Converted Leads",
+                    "type":  "int"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "EndDate",
+                    "label": "End Date",
+                    "type":  "date"
+                },
+                {
+                    "name":     "ExpectedResponse",
+                    "label":    "Expected Response",
+                    "type":     "percent",
+                    "decimals": 2
+                },
+                {
+                    "name":     "ExpectedRevenue",
+                    "label":    "Expected Revenue",
+                    "type":     "money",
+                    "decimals": 0
+                },
+                {
+                    "name":  "IsActive",
+                    "label": "Active",
+                    "type":  "boolean"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Campaign Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":     "NumberSent",
+                    "label":    "Number Sent",
+                    "type":     "double",
+                    "decimals": 0
+                },
+                {
+                    "name":  "StartDate",
+                    "label": "Start Date",
+                    "type":  "date"
+                },
+                {
+                    "name":       "Status",
+                    "label":      "Status",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Planned", "In Progress", "Completed", "Stopped"
+                    ]
+                },
+                {
+                    "name":   "TargetContacts",
+                    "label":  "Target Contacts",
+                    "type":   "int",
+                    "length": 80
+                },
+                {
+                    "name":   "TargetLeads",
+                    "label":  "Target Leads",
+                    "type":   "int",
+                    "length": 80
+                },
+                {
+                    "name":   "TargetOpportunities",
+                    "label":  "Target Opportunities",
+                    "type":   "int",
+                    "length": 80
+                },
+                {
+                    "name":   "TargetResponses",
+                    "label":  "Target Responses",
+                    "type":   "int",
+                    "length": 80
+                },
+                {
+                    "name":  "TotalContacts",
+                    "label": "Total Contacts",
+                    "type":  "int"
+                },
+                {
+                    "name":  "TotalLeads",
+                    "label": "Total Leads",
+                    "type":  "int"
+                },
+                {
+                    "name":  "TotalOpportunities",
+                    "label": "Total Opportunities",
+                    "type":  "int"
+                },
+                {
+                    "name":  "TotalResponses",
+                    "label": "Total Responses",
+                    "type":  "int"
+                },
+                {
+                    "name":       "Type",
+                    "label":      "Campaign Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Conference", "Trade Show", "Public Relations", "Webinar", "Billboard", "Partner Referral", "Partner Program", "Advertisement",
+                        "Banner Advertisement", "Direct Mail", "Telemarketing", "Email", "Other"
+                    ]
+                },
+                {
+                    "name":     "ValueTotalOpportunities",
+                    "label":    "Value Total Opportunities",
+                    "type":     "money",
+                    "decimals": 0
+                },
+                {
+                    "name":     "ValueWonOpportunities",
+                    "label":    "Value Won Opportunities",
+                    "type":     "money",
+                    "decimals": 0
+                },
+                {
+                    "name":  "WonOpportunities",
+                    "label": "Won Opportunities",
+                    "type":  "int"
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "CampaignMember",
+            "label":      "Campaign Member",
+            "plural":     "Campaign Members",
+            "name_field": "",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Campaign Member ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":       "CampaignId",
+                    "label":      "Campaign ID",
+                    "allow_null": false,
+                    "type":       "reference",
+                    "ref_table":  "Campaign",
+                    "ref_field":  "Id"
+                },
+                {
+                    "name":      "ContactId",
+                    "label":     "Contact ID",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "FirstRespondedDate",
+                    "label": "First Responded Date",
+                    "type":  "date"
+                },
+                {
+                    "name":  "HasResponded",
+                    "label": "Responded",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "LeadId",
+                    "label":     "Lead ID",
+                    "type":      "reference",
+                    "ref_table": "Lead",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Status",
+                    "label":      "Status",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Sent", "Received", "Responded", "Accepted", "Declined"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":       "Case",
+            "label":      "Case",
+            "plural":     "Cases",
+            "name_field": "Number",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Case ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":      "AccountId",
+                    "label":     "Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "ClosedDate",
+                    "label": "Closed Date",
+                    "type":  "datetime"
+                },
+                {
+                    "name":   "Company",
+                    "label":  "Company",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":      "ContactId",
+                    "label":     "Contact ID",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "Email",
+                    "label": "Email",
+                    "type":  "string",
+                    "validation": "email"
+                },
+                {
+                    "name":  "IsClosed",
+                    "label": "Closed",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "IsEscalated",
+                    "label": "Escalated",
+                    "type":  "boolean"
+                },
+                {
+                    "name":   "Name",
+                    "label":  "Case Name",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":       "Number",
+                    "label":      "Case Number",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     40
+                },
+                {
+                    "name":       "Origin",
+                    "label":      "Case Origin",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Phone", "Email", "Web", "Message"
+                    ]
+                },
+                {
+                    "name":   "Phone",
+                    "label":  "Phone",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":       "Priority",
+                    "label":      "Priority",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "High", "Medium", "Low"
+                    ]
+                },
+                {
+                    "name":       "Reason",
+                    "label":      "Case Reason",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Documentation", "Billing Dispute", "Billing System Error", "Product Breakdown", "Misunderstanding", "Product Complexity",
+                        "Product Design", "Feedback", "Installation", "Performance", "Question", "Other"
+                    ]
+                },
+                {
+                    "name":      "SolutionId",
+                    "label":     "Solution ID",
+                    "type":      "reference",
+                    "ref_table": "Solution",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Status",
+                    "label":      "Status",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "New", "Processing", "Analysis", "Escalation", "Closed"
+                    ]
+                },
+                {
+                    "name":   "Subject",
+                    "label":  "Subject",
+                    "type":   "string",
+                    "length": 255
+                },
+                {
+                    "name":       "Type",
+                    "label":      "Case Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Product", "Website", "Documentation", "Service"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "CaseComment",
+            "label":      "Case Comment",
+            "plural":     "Case Comments",
+            "name_field": "Name",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Case Comment ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Case Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":       "ParentId",
+                    "label":      "Parent ID",
+                    "allow_null": false,
+                    "type":       "reference",
+                    "ref_table":  "Case",
+                    "ref_field":  "Id"
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":       "Contact",
+            "label":      "Contact",
+            "plural":     "Contacts",
+            "name_field": "LastName",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Contact ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":      "AccountId",
+                    "label":     "Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "AssistantName",
+                    "label":  "Assistant&apos;s Name",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":  "AssistantPhone",
+                    "label": "Assistant&apos;s Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":  "Birthdate",
+                    "label": "Birthdate",
+                    "type":  "date"
+                },
+                {
+                    "name":   "Department",
+                    "label":  "Department",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "DoNotCall",
+                    "label": "Do Not Call",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "DoNotEmail",
+                    "label": "Do Not Email",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Email",
+                    "label": "Email",
+                    "type":  "string",
+                    "validation": "email"
+                },
+                {
+                    "name":  "Fax",
+                    "label": "Fax",
+                    "type":  "string"
+                },
+                {
+                    "name":   "FirstName",
+                    "label":  "First Name",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":  "HomePhone",
+                    "label": "Home Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":       "LastName",
+                    "label":      "Last Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":       "LeadSource",
+                    "label":      "Lead Source",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Web", "Phone Inquiry", "Partner Referral", "Partner Application", "Purchased List", "Tradeshow", "Product Promotion",
+                        "External Referral", "Other"
+                    ]
+                },
+                {
+                    "name":   "MailingCity",
+                    "label":  "Mailing City",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "MailingCountry",
+                    "label":  "Mailing Country",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "MailingPostalCode",
+                    "label":  "Mailing Postal Code",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "MailingState",
+                    "label":  "Mailing State",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "MailingStreet",
+                    "label":  "Mailing Street",
+                    "type":   "string"
+                },
+                {
+                    "name":  "MobilePhone",
+                    "label": "Mobile Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":   "OtherCity",
+                    "label":  "Other City",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "OtherCountry",
+                    "label":  "Other Country",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "OtherEmail",
+                    "label":  "Other Email",
+                    "type":  "string",
+                    "validation": "email",
+                    "length": 80
+                },
+                {
+                    "name":  "OtherPhone",
+                    "label": "Other Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":   "OtherPostalCode",
+                    "label":  "Other Postal Code",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "OtherState",
+                    "label":  "Other State",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "OtherStreet",
+                    "label":  "Other Street",
+                    "type":   "string"
+                },
+                {
+                    "name":  "Phone",
+                    "label": "Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":      "ReportsToId",
+                    "label":     "Reports To ID",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Salutation",
+                    "label":      "Salutation",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Mr.", "Ms.", "Mrs.", "Dr."
+                    ]
+                },
+                {
+                    "name":   "Title",
+                    "label":  "Title",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "Document",
+            "label":      "Document",
+            "plural":     "Documents",
+            "name_field": "Name",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Document ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":   "ContentType",
+                    "label":  "File Type",
+                    "type":   "string",
+                    "length": 120
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":      "FolderId",
+                    "label":     "Folder ID",
+                    "type":      "reference",
+                    "ref_table": "Folder",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "IsInternalUseOnly",
+                    "label": "Internal Use Only",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "IsPublic",
+                    "label": "Externally Available",
+                    "type":  "boolean"
+                },
+                {
+                    "name":   "Keywords",
+                    "label":  "Keywords",
+                    "type":   "string",
+                    "length": 255
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Document Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     255
+                },
+                {
+                    "name":   "Type",
+                    "label":  "File Extension",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "Url",
+                    "label":  "URL",
+                    "type":   "string",
+                    "length": 255
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "Event",
+            "label":      "Event",
+            "plural":     "Events",
+            "name_field": "Subject",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Event ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":      "AccountId",
+                    "label":     "Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "ActivityDate",
+                    "label": "Activity Date Only",
+                    "type":  "date"
+                },
+                {
+                    "name":  "ActivityDateTime",
+                    "label": "Activity Date Time",
+                    "type":  "datetime"
+                },
+                {
+                    "name":      "CampaignId",
+                    "label":     "Campaign ID",
+                    "type":      "reference",
+                    "ref_table": "Campaign",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "CaseId",
+                    "label":     "Case ID",
+                    "type":      "reference",
+                    "ref_table": "Case",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "DurationInMinutes",
+                    "label": "Duration",
+                    "type":  "int"
+                },
+                {
+                    "name":  "IsAllDayEvent",
+                    "label": "All Day Event",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "IsGroupEvent",
+                    "label": "Group Event",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "IsPrivate",
+                    "label": "Private",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "LeadId",
+                    "label":     "Lead ID",
+                    "type":      "reference",
+                    "ref_table": "Lead",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Location",
+                    "label":  "Location",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":      "OpportunityId",
+                    "label":     "Opportunity ID",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "ShowAs",
+                    "label":      "Show Time As",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Busy", "Free", "Vacation", "Out Of Office"
+                    ]
+                },
+                {
+                    "name":      "SolutionId",
+                    "label":     "Solution ID",
+                    "type":      "reference",
+                    "ref_table": "Solution",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Subject",
+                    "label":      "Subject",
+                    "allow_null": false,
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Email", "Phone Call", "Instant Message", "Conversation", "Letter"
+                    ]
+                },
+                {
+                    "name":       "Type",
+                    "label":      "Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "None", "Important", "Business", "Personal", "Vacation", "Must Attend", "Travel Required", "Needs Preparation", "Birthday",
+                        "Anniversary", "Phone Call"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Assigned To ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "Folder",
+            "label":      "Folder",
+            "plural":     "Folders",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Folder ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":       "AccessType",
+                    "label":      "Access Type",
+                    "allow_null": false,
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Shared", "Public", "Hidden"
+                    ]
+                },
+                {
+                    "name":  "IsReadOnly",
+                    "label": "Read Only",
+                    "type":  "boolean"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Folder Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     40
+                },
+                {
+                    "name":       "Type",
+                    "label":      "Folder Type",
+                    "allow_null": false,
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Document", "Report", "Dashboard"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":          "Group",
+            "label":         "Group",
+            "plural":        "Groups",
+            "api_read_only": true,
+            "name_field":    "Name",
+            "field":         [
+                {
+                    "name":  "Id",
+                    "label": "Group ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "Email",
+                    "label": "Email",
+                    "type":  "string",
+                    "validation": "email"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Group Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":      "ParentId",
+                    "label":     "Parent ID",
+                    "type":      "reference",
+                    "ref_table": "Group",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Type",
+                    "label":      "Group Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Administrators", "New Members", "Regular Members", "Active Members", "InActive Members"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":       "Lead",
+            "label":      "Lead",
+            "plural":     "Leads",
+            "name_field": "LastName",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Lead ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":     "AnnualRevenue",
+                    "label":    "Annual Revenue",
+                    "type":     "money",
+                    "decimals": 0
+                },
+                {
+                    "name":   "City",
+                    "label":  "City",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":       "Company",
+                    "label":      "Company",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     255
+                },
+                {
+                    "name":      "ConvertedAccountId",
+                    "label":     "Converted Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "ConvertedContactId",
+                    "label":     "Converted Contact ID",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "ConvertedDate",
+                    "label": "Converted Date",
+                    "type":  "date"
+                },
+                {
+                    "name":      "ConvertedOpportunityId",
+                    "label":     "Converted Opportunity ID",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Country",
+                    "label":  "Country",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "DoNotCall",
+                    "label": "Do Not Call",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "DoNotEmail",
+                    "label": "Do Not Email",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Email",
+                    "label": "Email",
+                    "type":  "string",
+                    "validation": "email"
+                },
+                {
+                    "name":  "Fax",
+                    "label": "Fax",
+                    "type":  "string"
+                },
+                {
+                    "name":   "FirstName",
+                    "label":  "First Name",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":       "Industry",
+                    "label":      "Industry",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Agriculture", "Apparel", "Banking", "Biotechnology", "Chemicals", "Communications", "Construction", "Consulting", "Education",
+                        "Electronics", "Energy", "Engineering", "Entertainment", "Environmental", "Finance", "Food &amp; Beverage", "Government", "Healthcare",
+                        "Hospitality", "Insurance", "Machinery", "Manufacturing", "Media", "Not For Profit", "Recreation", "Retail", "Shipping", "Software",
+                        "Technology", "Telecommunications", "Transportation", "Utilities", "Other"
+                    ]
+                },
+                {
+                    "name":  "IsConverted",
+                    "label": "Converted",
+                    "type":  "boolean"
+                },
+                {
+                    "name":   "LastCallDate",
+                    "label":  "Last Call Date",
+                    "type":   "datetime",
+                    "length": 80
+                },
+                {
+                    "name":   "LastCallPhone",
+                    "label":  "Last Call Phone",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":       "LastName",
+                    "label":      "Last Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":       "LeadSource",
+                    "label":      "Lead Source",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Web", "Phone Inquiry", "Partner Referral", "Partner Application", "Purchased List", "Tradeshow", "Promotion", "Other"
+                    ]
+                },
+                {
+                    "name":   "MeetingDate",
+                    "label":  "Meeting Date",
+                    "type":   "datetime",
+                    "length": 80
+                },
+                {
+                    "name":   "MeetingLocation",
+                    "label":  "Meeting Location",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":  "MobilePhone",
+                    "label": "Mobile Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":   "NextCallDate",
+                    "label":  "Next Call Date",
+                    "type":   "datetime",
+                    "length": 80
+                },
+                {
+                    "name":   "NextCallPhone",
+                    "label":  "Next Call Phone",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":  "NumberOfEmployees",
+                    "label": "Employees",
+                    "type":  "int"
+                },
+                {
+                    "name":  "Phone",
+                    "label": "Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":   "PostalCode",
+                    "label":  "Postal Code",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":       "Rating",
+                    "label":      "Rating",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Hot", "Warm", "Cold"
+                    ]
+                },
+                {
+                    "name":       "Salutation",
+                    "label":      "Salutation",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Mr.", "Ms.", "Mrs.", "Dr."
+                    ]
+                },
+                {
+                    "name":   "State",
+                    "label":  "State",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":       "Status",
+                    "label":      "Status",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Open", "Assigned", "Demo Scheduled", "Demo Completed", "Converted", "Qualified"
+                    ]
+                },
+                {
+                    "name":   "Street",
+                    "label":  "Street",
+                    "type":   "string"
+                },
+                {
+                    "name":   "Title",
+                    "label":  "Title",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":  "Website",
+                    "label": "Website",
+                    "type":  "text"
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "Message",
+            "label":      "Message",
+            "plural":     "Messages",
+            "name_field": "Name",
+
+            "field": [
+                {
+                    "name":       "Id",
+                    "label":      "Message ID",
+                    "allow_null": false,
+                    "type":       "id"
+                },
+                {
+                    "name":   "Body",
+                    "label":  "Body",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":   "IsRead",
+                    "label":  "Read",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Message Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":      "Recipient",
+                    "label":     "Recipient",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "Sender",
+                    "label":     "Sender",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "Note",
+            "label":      "Note",
+            "plural":     "Notes",
+            "name_field": "Title",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Note ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":      "AccountId",
+                    "label":     "Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Body",
+                    "label":  "Body",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":      "CampaignId",
+                    "label":     "Campaign ID",
+                    "type":      "reference",
+                    "ref_table": "Campaign",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "CaseId",
+                    "label":     "Case ID",
+                    "type":      "reference",
+                    "ref_table": "Case",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "ContactId",
+                    "label":     "Contact ID",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "IsPrivate",
+                    "label": "Private",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "LeadId",
+                    "label":     "Lead ID",
+                    "type":      "reference",
+                    "ref_table": "Lead",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "OpportunityId",
+                    "label":     "Opportunity ID",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "SolutionId",
+                    "label":     "Solution ID",
+                    "type":      "reference",
+                    "ref_table": "Solution",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Title",
+                    "label":      "Title",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "Opportunity",
+            "label":      "Opportunity",
+            "plural":     "Opportunities",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Opportunity ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":      "AccountId",
+                    "label":     "Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":     "Amount",
+                    "label":    "Amount",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":      "CampaignId",
+                    "label":     "Campaign ID",
+                    "type":      "reference",
+                    "ref_table": "Campaign",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "CloseDate",
+                    "label":      "Close Date",
+                    "allow_null": false,
+                    "type":       "date"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":     "ExpectedRevenue",
+                    "label":    "Expected Revenue",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":       "ForecastCategory",
+                    "label":      "Forecast Category",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Omitted", "Pipeline", "Best Case", "Commit", "Closed"
+                    ]
+                },
+                {
+                    "name":  "IsClosed",
+                    "label": "Closed",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "IsPrivate",
+                    "label": "Private",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "IsWon",
+                    "label": "Won",
+                    "type":  "boolean"
+                },
+                {
+                    "name":       "LeadSource",
+                    "label":      "Lead Source",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Web", "Phone Inquiry", "Partner Referral", "Partner Application", "Purchased List", "Tradeshow", "Product Promotion", "Other"
+                    ]
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Opportunity Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     120
+                },
+                {
+                    "name":   "NextStep",
+                    "label":  "Next Step",
+                    "type":   "string",
+                    "length": 255
+                },
+                {
+                    "name":     "Probability",
+                    "label":    "Probability",
+                    "type":     "percent",
+                    "decimals": 0
+                },
+                {
+                    "name":       "Stage",
+                    "label":      "Stage",
+                    "allow_null": false,
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Prospecting", "Interest", "Qualification", "Evaluation", "Proposal", "Closed Lost", "Closed Won"
+                    ]
+                },
+                {
+                    "name":     "TargetAmount",
+                    "label":    "Target Amount",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":       "Type",
+                    "label":      "Opportunity Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Upgrade", "Replacement", "Downgrade", "New Customer", "Upsell", "Cross Sell", "Other"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "OpportunityLineItem",
+            "label":      "Opportunity Line Item",
+            "plural":     "Opportunity Line Items",
+            "name_field": "",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Line Item ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":     "ActualPrice",
+                    "label":    "Actual Price",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":     "Discount",
+                    "label":    "Discount",
+                    "type":     "percent",
+                    "decimals": 2
+                },
+                {
+                    "name":     "ListPrice",
+                    "label":    "List Price",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":       "OpportunityId",
+                    "label":      "Opportunity ID",
+                    "allow_null": false,
+                    "type":       "reference",
+                    "ref_table":  "Opportunity",
+                    "ref_field":  "Id"
+                },
+                {
+                    "name":      "ProductId",
+                    "label":     "Product ID",
+                    "type":      "reference",
+                    "ref_table": "Product",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Quantity",
+                    "label":      "Quantity",
+                    "allow_null": false,
+                    "type":       "int",
+                    "decimals":   2
+                },
+                {
+                    "name":  "ServiceDate",
+                    "label": "Service Date",
+                    "type":  "date"
+                },
+                {
+                    "name":  "SortOrder",
+                    "label": "Sort Order",
+                    "type":  "int"
+                },
+                {
+                    "name":     "TotalPrice",
+                    "label":    "Total Price",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":          "Organization",
+            "label":         "Organization",
+            "plural":        "Organizations",
+            "api_read_only": true,
+            "name_field":    "Name",
+            "field":         [
+                {
+                    "name":  "Id",
+                    "label": "Organization ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":   "City",
+                    "label":  "City",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "Country",
+                    "label":  "Country",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "Division",
+                    "label":  "Division",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":  "Fax",
+                    "label": "Fax",
+                    "type":  "string"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Organization Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":       "OrganizationType",
+                    "label":      "Organization Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Type 1", "Type 2", "Type 3"
+                    ]
+                },
+                {
+                    "name":  "Phone",
+                    "label": "Phone",
+                    "type":  "string"
+                },
+                {
+                    "name":   "PostalCode",
+                    "label":  "Postal Code",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "PrimaryContact",
+                    "label":  "Primary Contact",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":   "State",
+                    "label":  "State",
+                    "type":   "string",
+                    "length": 20
+                },
+                {
+                    "name":   "Street",
+                    "label":  "Street",
+                    "type":   "string"
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":       "Partner",
+            "label":      "Partner",
+            "plural":     "Partners",
+            "name_field": "Name",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Partner ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":      "DestAccountId",
+                    "label":     "Destination Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "DestOpportunityId",
+                    "label":     "Destination Opportunity ID",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Influence",
+                    "label":      "Influence",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Supporter", "Detractor", "Champion", "Influencer", "Reference", "Consultant", "Specialist", "Regulator"
+                    ]
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Partner Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":       "Role",
+                    "label":      "Role",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Advertiser", "Agency", "Broker", "Consultant", "Contractor", "Developer", "Dealer", "Distributor", "Institution", "Lender", "Supplier",
+                        "Integrator", "Reseller", "Other"
+                    ]
+                },
+                {
+                    "name":      "SrcAccountId",
+                    "label":     "Source Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "SrcContactId",
+                    "label":     "Source Contact ID",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":       "Product",
+            "label":      "Product",
+            "plural":     "Products",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Product ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "IsActive",
+                    "label": "Active",
+                    "type":  "boolean"
+                },
+                {
+                    "name":   "IsBackOrdered",
+                    "label":  "Back Ordered",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "IsInStock",
+                    "label":  "In Stock",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":     "ListPrice",
+                    "label":    "List Price",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Product Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "ProductCode",
+                    "label":  "Product Code",
+                    "type":   "string",
+                    "length": 255
+                },
+                {
+                    "name":       "ProductFamily",
+                    "label":      "Product Family",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Installation", "Support", "General", "Enterprise"
+                    ]
+                },
+                {
+                    "name":   "UnitsInStock",
+                    "label":  "Units In Stock",
+                    "type":   "int",
+                    "length": 80
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":          "Role",
+            "label":         "Role",
+            "plural":        "Roles",
+            "api_read_only": true,
+            "name_field":    "Name",
+            "field":         [
+                {
+                    "name":  "Id",
+                    "label": "Role ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":       "Access",
+                    "label":      "Access",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "none", "read", "create,read", "read,update", "create,read,update", "create,read,update,delete", "create,read,update,delete,admin"
+                    ]
+                },
+                {
+                    "name":   "Default",
+                    "label":  "Default",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Role Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "Privileges",
+                    "label":  "Privileges",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                }
+            ]
+        },
+        {
+            "name":       "Solution",
+            "label":      "Solution",
+            "plural":     "Solutions",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Solution ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":   "IsPublic",
+                    "label":  "Externally Available",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":  "IsReviewed",
+                    "label": "Reviewed",
+                    "type":  "boolean"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Solution Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     255
+                },
+                {
+                    "name":   "Number",
+                    "label":  "Solution Number",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":       "Status",
+                    "label":      "Status",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Submitted", "Reviewed", "Duplicate", "In Queue", "Postponed", "Declined", "Implemented"
+                    ]
+                },
+                {
+                    "name":  "TimesUsed",
+                    "label": "Times Used",
+                    "type":  "int"
+                },
+                {
+                    "name":       "Type",
+                    "label":      "Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Bug", "Educational", "Feature Request", "Limitation", "On Roadmap"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Owner ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "Task",
+            "label":      "Task",
+            "plural":     "Tasks",
+            "name_field": "Subject",
+
+            "field": [
+                {
+                    "name":  "Id",
+                    "label": "Task ID",
+
+                    "type": "id"
+                },
+                {
+                    "name":      "AccountId",
+                    "label":     "Account ID",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "ActivityDate",
+                    "label": "Activity Date",
+                    "type":  "date"
+                },
+                {
+                    "name":  "CallDuration",
+                    "label": "Call Duration",
+                    "type":  "int"
+                },
+                {
+                    "name":   "CallResult",
+                    "label":  "Call Result",
+                    "type":   "string",
+                    "length": 255
+                },
+                {
+                    "name":       "CallType",
+                    "label":      "Call Type",
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Internal", "Inbound", "Outbound"
+                    ]
+                },
+                {
+                    "name":      "CampaignId",
+                    "label":     "Campaign ID",
+                    "type":      "reference",
+                    "ref_table": "Campaign",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "CaseId",
+                    "label":     "Case ID",
+                    "type":      "reference",
+                    "ref_table": "Case",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Description",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 4000
+                },
+                {
+                    "name":  "IsClosed",
+                    "label": "Closed",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "LeadId",
+                    "label":     "Lead ID",
+                    "type":      "reference",
+                    "ref_table": "Lead",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "OpportunityId",
+                    "label":     "Opportunity ID",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Priority",
+                    "label":      "Priority",
+                    "allow_null": false,
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "High", "Normal", "Low"
+                    ]
+                },
+                {
+                    "name":      "SolutionId",
+                    "label":     "Solution ID",
+                    "type":      "reference",
+                    "ref_table": "Solution",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Status",
+                    "label":      "Status",
+                    "allow_null": false,
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Not Started", "In Progress", "Completed", "Waiting", "Deferred"
+                    ]
+                },
+                {
+                    "name":       "Subject",
+                    "label":      "Subject",
+                    "allow_null": false,
+                    "type":       "string",
+                    "validation": "picklist",
+                    "values":     [
+                        "Email", "Phone Call", "Instant Message", "Discussion", "Letter"
+                    ]
+                },
+                {
+                    "name": "CreatedById",
+                    "label": "Created By ID",
+                    "type": "user_id_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "CreatedDate",
+                    "label": "Created Date",
+                    "type": "timestamp_on_create",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedById",
+                    "label": "Last Modified By ID",
+                    "type": "user_id_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name": "LastModifiedDate",
+                    "label": "Last Modified Date",
+                    "type": "timestamp_on_update",
+                    "api_read_only": true
+                },
+                {
+                    "name":      "OwnerId",
+                    "label":     "Assigned To ID",
+                    "type":      "reference",
+                    "ref_table": "df_sys_user",
+                    "ref_field": "Id"
+                }
+            ]
+        },
+        {
+            "name":       "DFAC_Shared_View__c",
+            "label":      "DreamFactory Shared View",
+            "plural":     "DreamFactory Shared Views",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":  "Application__c",
+                    "label": "Application",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Data__c",
+                    "label":  "Data",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Description__c",
+                    "label": "Description",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":  "Owner__c",
+                    "label": "Owner",
+                    "type":  "user_id"
+                },
+                {
+                    "name":  "Private__c",
+                    "label": "Private",
+                    "type":  "boolean"
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFDT_Action_Item__c",
+            "label":      "DreamTeam Action Item",
+            "plural":     "DreamTeam Action Items",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":  "Action_Owner__c",
+                    "label": "Action Owner",
+                    "type":  "user_id"
+                },
+                {
+                    "name":   "Description__c",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Due__c",
+                    "label": "Due",
+                    "type":  "date"
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":  "Include_in_Report__c",
+                    "label": "Include in Report",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "Issue_Link__c",
+                    "label":     "Issue Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Issue__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Action Item Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":      "Project_Link__c",
+                    "label":     "Project Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Project__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Status__c",
+                    "label": "Status",
+                    "type":  "string",
+                    "value": [
+                        "Not Started", "In Progress", "Completed"
+                    ]
+                },
+                {
+                    "name":      "Task_Link__c",
+                    "label":     "Task Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Task__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFDT_Discussion__c",
+            "label":      "DreamTeam Discussion",
+            "plural":     "DreamTeam Discussions",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Attachment_Link__c",
+                    "label":  "Attachment Link",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "Body__c",
+                    "label":  "Body",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Discussion Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "Purpose__c",
+                    "label":  "Purpose",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFDT_Highlight__c",
+            "label":      "DreamTeam Highlight",
+            "plural":     "DreamTeam Highlights",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":  "Date__c",
+                    "label": "Date",
+                    "type":  "date"
+                },
+                {
+                    "name":   "Description__c",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":  "Highlight_Owner__c",
+                    "label": "Highlight Owner",
+                    "type":  "user_id"
+                },
+                {
+                    "name":  "Include_in_Report__c",
+                    "label": "Include in Report",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Include_in_Weekly_Dashboard__c",
+                    "label": "Include in Weekly Dashboard",
+                    "type":  "boolean"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Highlight Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":  "Priority__c",
+                    "label": "Priority",
+                    "type":  "string",
+                    "value": [
+                        "Medium", "Low", "High"
+                    ]
+                },
+                {
+                    "name":      "Project_Link__c",
+                    "label":     "Project Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Project__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFDT_Issue__c",
+            "label":      "DreamTeam Issue",
+            "plural":     "DreamTeam Issues",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Description__c",
+                    "label":  "Description",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":  "Impact__c",
+                    "label": "Impact",
+                    "type":  "string"
+                },
+                {
+                    "name":  "Include_in_Report__c",
+                    "label": "Include in Report",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Issue_Owner__c",
+                    "label": "Issue Owner",
+                    "type":  "user_id"
+                },
+                {
+                    "name":  "Issue_Raised_On__c",
+                    "label": "Issue Raised On",
+                    "type":  "date"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Issue Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":       "Priority__c",
+                    "label":      "Priority",
+                    "type":       "string",
+                    "value":      [
+                        "Medium", "High", "Low"
+                    ],
+                    "validation": {
+                        "picklist": {}
+                    }
+                },
+                {
+                    "name":      "Project_Link__c",
+                    "label":     "Project Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Project__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Resolution__c",
+                    "label":  "Resolution",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Resolve_By__c",
+                    "label": "Resolve By",
+                    "type":  "date"
+                },
+                {
+                    "name":       "Severity__c",
+                    "label":      "Severity",
+                    "type":       "string",
+                    "value":      [
+                        "Medium", "High", "Low"
+                    ],
+                    "validation": {
+                        "picklist": {}
+                    }
+                },
+                {
+                    "name":       "Status__c",
+                    "label":      "Status",
+                    "type":       "string",
+                    "value":      [
+                        "Not Started", "In Progress", "Resolved", "Submitted", "Approved", "Rejected", "Implementation", "Project Plan Updated", "Closed"
+                    ],
+                    "validation": {
+                        "picklist": {}
+                    }
+                },
+                {
+                    "name":      "Task_Link__c",
+                    "label":     "Task Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Task__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Type__c",
+                    "label":      "Type",
+                    "type":       "string",
+                    "value":      [
+                        "Issue", "Risk", "Change Request"
+                    ],
+                    "validation": {
+                        "picklist": {}
+                    }
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFDT_Linker__c",
+            "label":      "DreamTeam Linker",
+            "plural":     "DreamTeam Linkers",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Destination_Link__c",
+                    "label":  "Destination Link",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Linker Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "Purpose__c",
+                    "label":  "Purpose",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":   "Source_Link__c",
+                    "label":  "Source Link",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFDT_Project__c",
+            "label":      "DreamTeam Project",
+            "plural":     "DreamTeam Projects",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":      "Account_Link__c",
+                    "label":     "Account Link",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Archive__c",
+                    "label": "Archive",
+                    "type":  "boolean"
+                },
+                {
+                    "name":     "Complete__c",
+                    "label":    "Complete",
+                    "type":     "percent",
+                    "decimals": 0
+                },
+                {
+                    "name":     "Complete_Tasks__c",
+                    "label":    "Complete Tasks",
+                    "type":     "percent",
+                    "decimals": 0
+                },
+                {
+                    "name":     "Cost__c",
+                    "label":    "Cost",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Cost_Baseline__c",
+                    "label":    "Cost Baseline",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":  "Description__c",
+                    "label": "Description",
+                    "type":  "string"
+                },
+                {
+                    "name":     "Duration_In_Business_Days__c",
+                    "label":    "Duration In Business Days",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Duration_In_Calendar_Days__c",
+                    "label":    "Duration In Calendar Days",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":  "Finish__c",
+                    "label": "Finish Date",
+                    "type":  "datetime"
+                },
+                {
+                    "name":  "Finish_Baseline__c",
+                    "label": "Finish Baseline",
+                    "type":  "datetime"
+                },
+                {
+                    "name":      "Folder_Link__c",
+                    "label":     "Folder Link",
+                    "type":      "reference",
+                    "ref_table": "Folder",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Project Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":      "Opportunity_Link__c",
+                    "label":     "Opportunity Link",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Priority__c",
+                    "label": "Priority",
+                    "type":  "string"
+                },
+                {
+                    "name":     "Revenue__c",
+                    "label":    "Revenue",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Revenue_Baseline__c",
+                    "label":    "Revenue Baseline",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Schedule__c",
+                    "label":    "Schedule",
+                    "type":     "percent",
+                    "decimals": 0
+                },
+                {
+                    "name":     "Schedule_Override__c",
+                    "label":    "Schedule Override",
+                    "type":     "percent",
+                    "decimals": 0
+                },
+                {
+                    "name":  "Start__c",
+                    "label": "Start Date",
+                    "type":  "datetime"
+                },
+                {
+                    "name":  "Start_Baseline__c",
+                    "label": "Start Baseline",
+                    "type":  "datetime"
+                },
+                {
+                    "name":  "Type__c",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
+                        "Professional Services", "Product Development", "Event Planning", "Marketing Campaign", "Sales Campaign", "Technical Support",
+                        "Customer Engagement", "Sales Operations", "Sales Infrastructure", "Shared Infrastructure", "Web Development",
+                        "Customer Success Campaign"
+                    ]
+                },
+                {
+                    "name":   "Vacation_List__c",
+                    "label":  "Vacation List",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Weight__c",
+                    "label":    "Weight",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Work_In_Actual_Hours__c",
+                    "label":    "Work In Actual Hours",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Work_In_Planned_Hours__c",
+                    "label":    "Work In Planned Hours",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":   "Workday_List__c",
+                    "label":  "Workday List",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFDT_Resource__c",
+            "label":      "DreamTeam Resource",
+            "plural":     "DreamTeam Resources",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Approval__c",
+                    "label":  "Approval",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Archive__c",
+                    "label": "Archive",
+                    "type":  "boolean"
+                },
+                {
+                    "name":   "Attachment_Link__c",
+                    "label":  "Attachment Link",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":     "Billing_Cost_Per_Day__c",
+                    "label":    "Billing Cost Per Day",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Billing_Cost_Per_Use__c",
+                    "label":    "Billing Cost Per Use",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Billing_Hourly_Rate__c",
+                    "label":    "Billing Hourly Rate",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Billing_Overtime_Rate__c",
+                    "label":    "Billing Overtime Rate",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Cost_Per_Day__c",
+                    "label":    "Cost Per Day",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Cost_Per_Use__c",
+                    "label":    "Cost Per Use",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":  "Description__c",
+                    "label": "Description",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":     "Hourly_Rate__c",
+                    "label":    "Hourly Rate",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Resource Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":     "Overtime_Rate__c",
+                    "label":    "Overtime Rate",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":      "Project_Link__c",
+                    "label":     "Project Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Project__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Purpose__c",
+                    "label":  "Purpose",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":       "Skill_Certification__c",
+                    "label":      "Skill Certification",
+                    "type":       "string",
+                    "validation": {
+                        "picklist": {}
+                    },
+                    "value":      [
+                        "Cisco Certified Internetwork Expert", "Certified Lotus Professional", "Certified Lotus Specialist", "Certified Novell Administrator",
+                        "Certified Novell Engineer", "Certified Solaris Administrator", "Microsoft Certified Database Administrator",
+                        "Microsoft Certified Professional", "Microsoft Certified Solutions Developer", "Microsoft Certified Systems Engineer",
+                        "Novell Certified Internet Professional", "Oracle Certified Professional", "Project Management Professional"
+                    ]
+                },
+                {
+                    "name":  "Skill_Level__c",
+                    "label": "Skill Level",
+                    "type":  "string",
+                    "value": [
+                        "None", "Beginner", "Intermediate", "Advanced", "Expert"
+                    ]
+                },
+                {
+                    "name":  "Skill_Set__c",
+                    "label": "Skill Set",
+                    "type":  "string",
+                    "value": [
+                        "None", "Business Analyst", "Consultant", "Database Administrator", "Developer", "Lead Developer", "Engineer", "Lead Engineer",
+                        "Network Administrator", "Project Manager", "Senior Consultant", "Senior Database Administrator", "Senior Developer", "Task Manager",
+                        "Technical Architect", "Technical Lead", "Web Master"
+                    ]
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFDT_Task__c",
+            "label":      "DreamTeam Task",
+            "plural":     "DreamTeam Tasks",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Approval__c",
+                    "label":  "Approval",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Archive__c",
+                    "label": "Archive",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Billable_Task__c",
+                    "label": "Billable Task",
+                    "type":  "boolean"
+                },
+                {
+                    "name":     "Complete__c",
+                    "label":    "Complete",
+                    "type":     "percent",
+                    "decimals": 0
+                },
+                {
+                    "name":  "Constraint_Date__c",
+                    "label": "Constraint Date",
+                    "type":  "datetime"
+                },
+                {
+                    "name":   "Constraint_Type__c",
+                    "label":  "Constraint Type",
+                    "type":   "string",
+                    "length": 160
+                },
+                {
+                    "name":     "Cost__c",
+                    "label":    "Cost",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Cost_Baseline__c",
+                    "label":    "Cost Baseline",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":  "Dependent__c",
+                    "label": "Dependent",
+                    "type":  "string",
+                    "value": [
+                        "Units", "Work", "Duration"
+                    ]
+                },
+                {
+                    "name":  "Description__c",
+                    "label": "Description",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Duration__c",
+                    "label":  "Duration",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":     "Duration_In_Business_Days__c",
+                    "label":    "Duration In Business Days",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Duration_In_Calendar_Days__c",
+                    "label":    "Duration In Calendar Days",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":  "Finish__c",
+                    "label": "Finish Date",
+                    "type":  "datetime"
+                },
+                {
+                    "name":  "Finish_Baseline__c",
+                    "label": "Finish Baseline",
+                    "type":  "datetime"
+                },
+                {
+                    "name":     "Index__c",
+                    "label":    "Index",
+                    "type":     "double",
+                    "decimals": 0
+                },
+                {
+                    "name":   "Link__c",
+                    "label":  "Link",
+                    "type":   "string",
+                    "length": 160
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Task Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":      "Project_Link__c",
+                    "label":     "Project Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Project__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Resources__c",
+                    "label":  "Resources",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":     "Revenue__c",
+                    "label":    "Revenue",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Revenue_Baseline__c",
+                    "label":    "Revenue Baseline",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Schedule__c",
+                    "label":    "Schedule",
+                    "type":     "percent",
+                    "decimals": 0
+                },
+                {
+                    "name":  "Start__c",
+                    "label": "Start Date",
+                    "type":  "datetime"
+                },
+                {
+                    "name":  "Start_Baseline__c",
+                    "label": "Start Baseline",
+                    "type":  "datetime"
+                },
+                {
+                    "name":  "Subtask__c",
+                    "label": "Subtask",
+                    "type":  "boolean"
+                },
+                {
+                    "name":     "Tabs__c",
+                    "label":    "Tabs",
+                    "type":     "double",
+                    "decimals": 0
+                },
+                {
+                    "name":  "Type__c",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
+                        "Low Priority", "Standard", "High Priority", "Critical"
+                    ]
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":   "Work__c",
+                    "label":  "Work",
+                    "type":   "string",
+                    "length": 80
+                },
+                {
+                    "name":     "Work_In_Actual_Hours__c",
+                    "label":    "Work In Actual Hours",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Work_In_Planned_Hours__c",
+                    "label":    "Work In Planned Hours",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFFF_Form__c",
+            "label":      "Form",
+            "plural":     "Forms",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":      "Bookmark__c",
+                    "label":     "Bookmark",
+                    "type":      "reference",
+                    "ref_table": "DFFF_Page__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Data__c",
+                    "label":  "Data",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Description__c",
+                    "label": "Description",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Flag1__c",
+                    "label":  "Flag1",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag2__c",
+                    "label":  "Flag2",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag3__c",
+                    "label":  "Flag3",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag4__c",
+                    "label":  "Flag4",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":     "Height__c",
+                    "label":    "Height",
+                    "type":     "double",
+                    "decimals": 0
+                },
+                {
+                    "name":      "Lastopen__c",
+                    "label":     "Lastopen",
+                    "type":      "reference",
+                    "ref_table": "DFFF_Page__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Locked__c",
+                    "label": "Locked",
+                    "type":  "boolean"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Form Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "Over1__c",
+                    "label":  "Over1",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Over2__c",
+                    "label":  "Over2",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Over3__c",
+                    "label":  "Over3",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Private__c",
+                    "label": "Private",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Type__c",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
+                        "Invoice", "Order", "Proposal", "Contract", "Worksheet"
+                    ]
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":     "Width__c",
+                    "label":    "Width",
+                    "type":     "double",
+                    "decimals": 0
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFFF_Page__c",
+            "label":      "Page",
+            "plural":     "Pages",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Data__c",
+                    "label":  "Data",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Description__c",
+                    "label": "Description",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Flag1__c",
+                    "label":  "Flag1",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag2__c",
+                    "label":  "Flag2",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag3__c",
+                    "label":  "Flag3",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag4__c",
+                    "label":  "Flag4",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":      "Form__c",
+                    "label":     "Form",
+                    "type":      "reference",
+                    "ref_table": "DFFF_Form__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":     "Index__c",
+                    "label":    "Index",
+                    "type":     "double",
+                    "decimals": 0
+                },
+                {
+                    "name":  "Keywords__c",
+                    "label": "Keywords",
+                    "type":  "string"
+                },
+                {
+                    "name":  "Locked__c",
+                    "label": "Locked",
+                    "type":  "boolean"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Page Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "Over1__c",
+                    "label":  "Over1",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Over2__c",
+                    "label":  "Over2",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Over3__c",
+                    "label":  "Over3",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Private__c",
+                    "label": "Private",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Type__c",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
+                        "Introduction", "Conclusion", "Signatures", "Content"
+                    ]
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFTE_Expense__c",
+            "label":      "DreamTeam Expense",
+            "plural":     "DreamTeam Expenses",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":      "Account_Link__c",
+                    "label":     "Account Link",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":     "Amount__c",
+                    "label":    "Amount",
+                    "type":     "money",
+                    "decimals": 2
+                },
+                {
+                    "name":   "Attachment_Link__c",
+                    "label":  "Attachment Link",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":  "Billable__c",
+                    "label": "Billable",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Billed_Flag__c",
+                    "label": "Billed Flag",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "Case_Link__c",
+                    "label":     "Case Link",
+                    "type":      "reference",
+                    "ref_table": "Case",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "Contact_Link__c",
+                    "label":     "Contact Link",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Date__c",
+                    "label": "Date",
+                    "type":  "date"
+                },
+                {
+                    "name":  "Description__c",
+                    "label": "Description",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Expense Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "Note__c",
+                    "label":  "Note",
+                    "type":   "text",
+                    "length": 1000
+                },
+                {
+                    "name":      "Opportunity_Link__c",
+                    "label":     "Opportunity Link",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "Project_Link__c",
+                    "label":     "Project Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Project__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Status__c",
+                    "label": "Status",
+                    "type":  "string",
+                    "value": [
+                        "Saved", "Submitted", "Approved", "Rejected", "Paid"
+                    ]
+                },
+                {
+                    "name":  "Submitted__c",
+                    "label": "Submitted",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "Task_Link__c",
+                    "label":     "Task Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Task__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Type__c",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
+                        "No Expense Type", "Transportation", "Lodging", "Meals", "Equipment Purchase"
+                    ]
+                },
+                {
+                    "name":  "User_Link__c",
+                    "label": "User Link",
+                    "type":  "user_id"
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFTE_Time__c",
+            "label":      "DreamTeam Time",
+            "plural":     "DreamTeam Times",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":      "Account_Link__c",
+                    "label":     "Account Link",
+                    "type":      "reference",
+                    "ref_table": "Account",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":   "Attachment_Link__c",
+                    "label":  "Attachment Link",
+                    "type":   "string",
+                    "length": 40
+                },
+                {
+                    "name":  "Billable__c",
+                    "label": "Billable",
+                    "type":  "boolean"
+                },
+                {
+                    "name":  "Billed_Flag__c",
+                    "label": "Billed Flag",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "Case_Link__c",
+                    "label":     "Case Link",
+                    "type":      "reference",
+                    "ref_table": "Case",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "Contact_Link__c",
+                    "label":     "Contact Link",
+                    "type":      "reference",
+                    "ref_table": "Contact",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Date__c",
+                    "label": "Date",
+                    "type":  "date"
+                },
+                {
+                    "name":  "Description__c",
+                    "label": "Description",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Time Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "Note__c",
+                    "label":  "Note",
+                    "type":   "text",
+                    "length": 1000
+                },
+                {
+                    "name":      "Opportunity_Link__c",
+                    "label":     "Opportunity Link",
+                    "type":      "reference",
+                    "ref_table": "Opportunity",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":      "Project_Link__c",
+                    "label":     "Project Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Project__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":  "Status__c",
+                    "label": "Status",
+                    "type":  "string",
+                    "value": [
+                        "Saved", "Submitted", "Approved", "Rejected"
+                    ]
+                },
+                {
+                    "name":  "Submitted__c",
+                    "label": "Submitted",
+                    "type":  "boolean"
+                },
+                {
+                    "name":      "Task_Link__c",
+                    "label":     "Task Link",
+                    "type":      "reference",
+                    "ref_table": "DFDT_Task__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":     "Time__c",
+                    "label":    "Time",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":  "Time_Units__c",
+                    "label": "Time Units",
+                    "type":  "string",
+                    "value": [
+                        "Hours", "Minutes"
+                    ]
+                },
+                {
+                    "name":  "Type__c",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
+                        "No Task Type", "Project Task", "Sales Support", "Training &amp; Education", "Practice Development", "Internal Meeting",
+                        "Performance Management", "Enterprise Account Support", "General Administration", "Paid Time Off", "Recruiting and Interviewing",
+                        "Instructing", "On-site Support"
+                    ]
+                },
+                {
+                    "name":  "User_Link__c",
+                    "label": "User Link",
+                    "type":  "user_id"
+                },
+                {
+                    "name":     "Version__c",
+                    "label":    "Version",
+                    "type":     "double",
+                    "decimals": 2
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFTT_Document__c",
+            "label":      "TableTop Document",
+            "plural":     "TableTop Documents",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Data__c",
+                    "label":  "Data",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Flag1__c",
+                    "label":  "Flag1",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag2__c",
+                    "label":  "Flag2",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag3__c",
+                    "label":  "Flag3",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag4__c",
+                    "label":  "Flag4",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":      "Folder_Link__c",
+                    "label":     "Folder Link",
+                    "type":      "reference",
+                    "ref_table": "DFTT_Folder__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Document Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":   "Over1__c",
+                    "label":  "Over1",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Over2__c",
+                    "label":  "Over2",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Over3__c",
+                    "label":  "Over3",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Type__c",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
+                        "Filter", "List", "Snapshot", "Webpage", "Command"
+                    ]
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFTT_Entity_Info__c",
+            "label":      "TableTop Entity Info",
+            "plural":     "TableTop Entity Infos",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Data__c",
+                    "label":  "Data",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Flag1__c",
+                    "label":  "Flag1",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag2__c",
+                    "label":  "Flag2",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag3__c",
+                    "label":  "Flag3",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag4__c",
+                    "label":  "Flag4",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Entity Info Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":  "Type__c",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
+                        "RecentlyCreated", "RecentlyModified", "RecentlyViewed", "DefaultFields"
+                    ]
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        },
+        {
+            "name":       "DFTT_Folder__c",
+            "label":      "TableTop Folder",
+            "plural":     "TableTop Folders",
+            "name_field": "Name",
+            "field":      [
+                {
+                    "name":  "Id",
+                    "label": "Record ID",
+                    "type":  "id"
+                },
+                {
+                    "name":   "Access_List__c",
+                    "label":  "Access List",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":   "Expansion__c",
+                    "label":  "Expansion",
+                    "type":   "text",
+                    "length": 32000
+                },
+                {
+                    "name":  "Extra_Field__c",
+                    "label": "Extra Field",
+                    "type":  "string"
+                },
+                {
+                    "name":   "Flag1__c",
+                    "label":  "Flag1",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag2__c",
+                    "label":  "Flag2",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag3__c",
+                    "label":  "Flag3",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":   "Flag4__c",
+                    "label":  "Flag4",
+                    "type":   "boolean",
+                    "length": 80
+                },
+                {
+                    "name":      "Folder_Link__c",
+                    "label":     "Folder Link",
+                    "type":      "reference",
+                    "ref_table": "DFTT_Folder__c",
+                    "ref_field": "Id"
+                },
+                {
+                    "name":       "Name",
+                    "label":      "Folder Name",
+                    "allow_null": false,
+                    "type":       "string",
+                    "length":     80
+                },
+                {
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
+                },
+                {
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
+                }
+            ]
+        }
+    ]
+}
