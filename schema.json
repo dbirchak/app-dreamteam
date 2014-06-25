@@ -42,9 +42,9 @@
                     "length": 20
                 },
                 {
-                    "name":   "BillingStreet",
-                    "label":  "Billing Street",
-                    "type":   "string"
+                    "name":  "BillingStreet",
+                    "label": "Billing Street",
+                    "type":  "string"
                 },
                 {
                     "name":   "Description",
@@ -64,13 +64,12 @@
                     "type":  "string"
                 },
                 {
-                    "name":       "Industry",
-                    "label":      "Industry",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Industry",
+                    "label": "Industry",
+                    "type":  "string",
+                    "value": [
                         "Agriculture", "Apparel", "Banking", "Biotechnology", "Chemicals", "Communications", "Construction", "Consulting", "Education",
-                        "Electronics", "Energy", "Engineering", "Entertainment", "Environmental", "Finance", "Food &amp; Beverage", "Government", "Healthcare",
+                        "Electronics", "Energy", "Engineering", "Entertainment", "Environmental", "Finance", "Food & Beverage", "Government", "Healthcare",
                         "Hospitality", "Insurance", "Machinery", "Manufacturing", "Media", "Not For Profit", "Recreation", "Retail", "Shipping", "Software",
                         "Technology", "Telecommunications", "Transportation", "Utilities", "Other"
                     ]
@@ -93,11 +92,10 @@
                     "type":  "int"
                 },
                 {
-                    "name":       "Ownership",
-                    "label":      "Ownership",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Ownership",
+                    "label": "Ownership",
+                    "type":  "string",
+                    "value": [
                         "Public", "Private", "Startup", "Partnership", "Corporation", "Sole Proprietorship", "Cooperative", "Subsidiary", "Other"
                     ]
                 },
@@ -114,11 +112,10 @@
                     "type":  "string"
                 },
                 {
-                    "name":       "Rating",
-                    "label":      "Rating",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Rating",
+                    "label": "Rating",
+                    "type":  "string",
+                    "value": [
                         "Hot", "Warm", "Cold"
                     ]
                 },
@@ -147,9 +144,9 @@
                     "length": 20
                 },
                 {
-                    "name":   "ShippingStreet",
-                    "label":  "Shipping Street",
-                    "type":   "string"
+                    "name":  "ShippingStreet",
+                    "label": "Shipping Street",
+                    "type":  "string"
                 },
                 {
                     "name":   "SicCode",
@@ -170,11 +167,10 @@
                     "length": 20
                 },
                 {
-                    "name":       "Type",
-                    "label":      "Account Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Type",
+                    "label": "Account Type",
+                    "type":  "string",
+                    "value": [
                         "Prospect", "Customer - Direct", "Customer - Channel", "Channel Partner / Reseller", "Installation Partner", "Manufacturing Partner",
                         "Other"
                     ]
@@ -185,35 +181,49 @@
                     "type":  "text"
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -246,38 +256,53 @@
                     "ref_field":  "Id"
                 },
                 {
-                    "name":       "Role",
-                    "label":      "Role",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Role",
+                    "label": "Role",
+                    "type":  "string",
+                    "value": [
                         "Business User", "Economic Buyer", "Decision Maker", "Evaluator", "Executive Sponsor", "Influencer", "Technical Buyer",
                         "Reseller Contact", "Board Member", "Champion", "Critic", "Neutral", "Other"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
@@ -368,35 +393,49 @@
                     "ref_field": "Id"
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -476,11 +515,10 @@
                     "type":  "date"
                 },
                 {
-                    "name":       "Status",
-                    "label":      "Status",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Status",
+                    "label": "Status",
+                    "type":  "string",
+                    "value": [
                         "Planned", "In Progress", "Completed", "Stopped"
                     ]
                 },
@@ -529,11 +567,10 @@
                     "type":  "int"
                 },
                 {
-                    "name":       "Type",
-                    "label":      "Campaign Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Type",
+                    "label": "Campaign Type",
+                    "type":  "string",
+                    "value": [
                         "Conference", "Trade Show", "Public Relations", "Webinar", "Billboard", "Partner Referral", "Partner Program", "Advertisement",
                         "Banner Advertisement", "Direct Mail", "Telemarketing", "Email", "Other"
                     ]
@@ -556,35 +593,49 @@
                     "type":  "int"
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -634,37 +685,52 @@
                     "ref_field": "Id"
                 },
                 {
-                    "name":       "Status",
-                    "label":      "Status",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Status",
+                    "label": "Status",
+                    "type":  "string",
+                    "value": [
                         "Sent", "Received", "Responded", "Accepted", "Declined"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
@@ -712,10 +778,12 @@
                     "length": 4000
                 },
                 {
-                    "name":  "Email",
-                    "label": "Email",
-                    "type":  "string",
-                    "validation": "email"
+                    "name":       "Email",
+                    "label":      "Email",
+                    "type":       "string",
+                    "validation": {
+                        "email": {}
+                    }
                 },
                 {
                     "name":  "IsClosed",
@@ -741,11 +809,10 @@
                     "length":     40
                 },
                 {
-                    "name":       "Origin",
-                    "label":      "Case Origin",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Origin",
+                    "label": "Case Origin",
+                    "type":  "string",
+                    "value": [
                         "Phone", "Email", "Web", "Message"
                     ]
                 },
@@ -756,20 +823,18 @@
                     "length": 40
                 },
                 {
-                    "name":       "Priority",
-                    "label":      "Priority",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Priority",
+                    "label": "Priority",
+                    "type":  "string",
+                    "value": [
                         "High", "Medium", "Low"
                     ]
                 },
                 {
-                    "name":       "Reason",
-                    "label":      "Case Reason",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Reason",
+                    "label": "Case Reason",
+                    "type":  "string",
+                    "value": [
                         "Documentation", "Billing Dispute", "Billing System Error", "Product Breakdown", "Misunderstanding", "Product Complexity",
                         "Product Design", "Feedback", "Installation", "Performance", "Question", "Other"
                     ]
@@ -782,11 +847,10 @@
                     "ref_field": "Id"
                 },
                 {
-                    "name":       "Status",
-                    "label":      "Status",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Status",
+                    "label": "Status",
+                    "type":  "string",
+                    "value": [
                         "New", "Processing", "Analysis", "Escalation", "Closed"
                     ]
                 },
@@ -797,44 +861,57 @@
                     "length": 255
                 },
                 {
-                    "name":       "Type",
-                    "label":      "Case Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Type",
+                    "label": "Case Type",
+                    "type":  "string",
+                    "value": [
                         "Product", "Website", "Documentation", "Service"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -873,28 +950,44 @@
                     "ref_field":  "Id"
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
@@ -919,13 +1012,13 @@
                 },
                 {
                     "name":   "AssistantName",
-                    "label":  "Assistant&apos;s Name",
+                    "label":  "Assistant's Name",
                     "type":   "string",
                     "length": 40
                 },
                 {
                     "name":  "AssistantPhone",
-                    "label": "Assistant&apos;s Phone",
+                    "label": "Assistant's Phone",
                     "type":  "string"
                 },
                 {
@@ -956,10 +1049,12 @@
                     "type":  "boolean"
                 },
                 {
-                    "name":  "Email",
-                    "label": "Email",
-                    "type":  "string",
-                    "validation": "email"
+                    "name":       "Email",
+                    "label":      "Email",
+                    "type":       "string",
+                    "validation": {
+                        "email": {}
+                    }
                 },
                 {
                     "name":  "Fax",
@@ -985,11 +1080,10 @@
                     "length":     80
                 },
                 {
-                    "name":       "LeadSource",
-                    "label":      "Lead Source",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "LeadSource",
+                    "label": "Lead Source",
+                    "type":  "string",
+                    "value": [
                         "Web", "Phone Inquiry", "Partner Referral", "Partner Application", "Purchased List", "Tradeshow", "Product Promotion",
                         "External Referral", "Other"
                     ]
@@ -1019,9 +1113,9 @@
                     "length": 20
                 },
                 {
-                    "name":   "MailingStreet",
-                    "label":  "Mailing Street",
-                    "type":   "string"
+                    "name":  "MailingStreet",
+                    "label": "Mailing Street",
+                    "type":  "string"
                 },
                 {
                     "name":  "MobilePhone",
@@ -1041,11 +1135,13 @@
                     "length": 40
                 },
                 {
-                    "name":   "OtherEmail",
-                    "label":  "Other Email",
-                    "type":  "string",
-                    "validation": "email",
-                    "length": 80
+                    "name":       "OtherEmail",
+                    "label":      "Other Email",
+                    "type":       "string",
+                    "validation": {
+                        "email": {}
+                    },
+                    "length":     80
                 },
                 {
                     "name":  "OtherPhone",
@@ -1065,9 +1161,9 @@
                     "length": 20
                 },
                 {
-                    "name":   "OtherStreet",
-                    "label":  "Other Street",
-                    "type":   "string"
+                    "name":  "OtherStreet",
+                    "label": "Other Street",
+                    "type":  "string"
                 },
                 {
                     "name":  "Phone",
@@ -1082,11 +1178,10 @@
                     "ref_field": "Id"
                 },
                 {
-                    "name":       "Salutation",
-                    "label":      "Salutation",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Salutation",
+                    "label": "Salutation",
+                    "type":  "string",
+                    "value": [
                         "Mr.", "Ms.", "Mrs.", "Dr."
                     ]
                 },
@@ -1097,35 +1192,49 @@
                     "length": 80
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -1197,35 +1306,49 @@
                     "length": 255
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -1320,11 +1443,10 @@
                     "ref_field": "Id"
                 },
                 {
-                    "name":       "ShowAs",
-                    "label":      "Show Time As",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "ShowAs",
+                    "label": "Show Time As",
+                    "type":  "string",
+                    "value": [
                         "Busy", "Free", "Vacation", "Out Of Office"
                     ]
                 },
@@ -1340,51 +1462,63 @@
                     "label":      "Subject",
                     "allow_null": false,
                     "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "value":      [
                         "Email", "Phone Call", "Instant Message", "Conversation", "Letter"
                     ]
                 },
                 {
-                    "name":       "Type",
-                    "label":      "Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Type",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
                         "None", "Important", "Business", "Personal", "Vacation", "Must Attend", "Travel Required", "Needs Preparation", "Birthday",
                         "Anniversary", "Phone Call"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Assigned To ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Assigned To ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -1405,8 +1539,7 @@
                     "label":      "Access Type",
                     "allow_null": false,
                     "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "value":      [
                         "Shared", "Public", "Hidden"
                     ]
                 },
@@ -1427,44 +1560,63 @@
                     "label":      "Folder Type",
                     "allow_null": false,
                     "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "value":      [
                         "Document", "Report", "Dashboard"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
         {
-            "name":          "Group",
-            "label":         "Group",
-            "plural":        "Groups",
-            "api_read_only": true,
-            "name_field":    "Name",
-            "field":         [
+            "name":       "Group",
+            "label":      "Group",
+            "plural":     "Groups",
+            "validation": {
+                "api_read_only": {
+                    "on_fail": "ignore_field"
+                }
+            },
+            "name_field": "Name",
+            "field":      [
                 {
                     "name":  "Id",
                     "label": "Group ID",
@@ -1478,10 +1630,12 @@
                     "length": 4000
                 },
                 {
-                    "name":  "Email",
-                    "label": "Email",
-                    "type":  "string",
-                    "validation": "email"
+                    "name":       "Email",
+                    "label":      "Email",
+                    "type":       "string",
+                    "validation": {
+                        "email": {}
+                    }
                 },
                 {
                     "name":       "Name",
@@ -1498,37 +1652,52 @@
                     "ref_field": "Id"
                 },
                 {
-                    "name":       "Type",
-                    "label":      "Group Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Type",
+                    "label": "Group Type",
+                    "type":  "string",
+                    "value": [
                         "Administrators", "New Members", "Regular Members", "Active Members", "InActive Members"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
@@ -1612,10 +1781,12 @@
                     "type":  "boolean"
                 },
                 {
-                    "name":  "Email",
-                    "label": "Email",
-                    "type":  "string",
-                    "validation": "email"
+                    "name":       "Email",
+                    "label":      "Email",
+                    "type":       "string",
+                    "validation": {
+                        "email": {}
+                    }
                 },
                 {
                     "name":  "Fax",
@@ -1629,13 +1800,12 @@
                     "length": 40
                 },
                 {
-                    "name":       "Industry",
-                    "label":      "Industry",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Industry",
+                    "label": "Industry",
+                    "type":  "string",
+                    "value": [
                         "Agriculture", "Apparel", "Banking", "Biotechnology", "Chemicals", "Communications", "Construction", "Consulting", "Education",
-                        "Electronics", "Energy", "Engineering", "Entertainment", "Environmental", "Finance", "Food &amp; Beverage", "Government", "Healthcare",
+                        "Electronics", "Energy", "Engineering", "Entertainment", "Environmental", "Finance", "Food & Beverage", "Government", "Healthcare",
                         "Hospitality", "Insurance", "Machinery", "Manufacturing", "Media", "Not For Profit", "Recreation", "Retail", "Shipping", "Software",
                         "Technology", "Telecommunications", "Transportation", "Utilities", "Other"
                     ]
@@ -1665,11 +1835,10 @@
                     "length":     80
                 },
                 {
-                    "name":       "LeadSource",
-                    "label":      "Lead Source",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "LeadSource",
+                    "label": "Lead Source",
+                    "type":  "string",
+                    "value": [
                         "Web", "Phone Inquiry", "Partner Referral", "Partner Application", "Purchased List", "Tradeshow", "Promotion", "Other"
                     ]
                 },
@@ -1719,20 +1888,18 @@
                     "length": 20
                 },
                 {
-                    "name":       "Rating",
-                    "label":      "Rating",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Rating",
+                    "label": "Rating",
+                    "type":  "string",
+                    "value": [
                         "Hot", "Warm", "Cold"
                     ]
                 },
                 {
-                    "name":       "Salutation",
-                    "label":      "Salutation",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Salutation",
+                    "label": "Salutation",
+                    "type":  "string",
+                    "value": [
                         "Mr.", "Ms.", "Mrs.", "Dr."
                     ]
                 },
@@ -1743,18 +1910,17 @@
                     "length": 20
                 },
                 {
-                    "name":       "Status",
-                    "label":      "Status",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Status",
+                    "label": "Status",
+                    "type":  "string",
+                    "value": [
                         "Open", "Assigned", "Demo Scheduled", "Demo Completed", "Converted", "Qualified"
                     ]
                 },
                 {
-                    "name":   "Street",
-                    "label":  "Street",
-                    "type":   "string"
+                    "name":  "Street",
+                    "label": "Street",
+                    "type":  "string"
                 },
                 {
                     "name":   "Title",
@@ -1768,35 +1934,49 @@
                     "type":  "text"
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -1833,49 +2013,59 @@
                     "length":     80
                 },
                 {
-                    "name":      "Recipient",
-                    "label":     "Recipient",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "Recipient",
+                    "label": "Recipient",
+                    "type":  "user_id"
                 },
                 {
-                    "name":      "Sender",
-                    "label":     "Sender",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "Sender",
+                    "label": "Sender",
+                    "type":  "user_id"
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -1960,35 +2150,49 @@
                     "length":     80
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -2043,11 +2247,10 @@
                     "decimals": 2
                 },
                 {
-                    "name":       "ForecastCategory",
-                    "label":      "Forecast Category",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "ForecastCategory",
+                    "label": "Forecast Category",
+                    "type":  "string",
+                    "value": [
                         "Omitted", "Pipeline", "Best Case", "Commit", "Closed"
                     ]
                 },
@@ -2067,11 +2270,10 @@
                     "type":  "boolean"
                 },
                 {
-                    "name":       "LeadSource",
-                    "label":      "Lead Source",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "LeadSource",
+                    "label": "Lead Source",
+                    "type":  "string",
+                    "value": [
                         "Web", "Phone Inquiry", "Partner Referral", "Partner Application", "Purchased List", "Tradeshow", "Product Promotion", "Other"
                     ]
                 },
@@ -2099,8 +2301,7 @@
                     "label":      "Stage",
                     "allow_null": false,
                     "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "value":      [
                         "Prospecting", "Interest", "Qualification", "Evaluation", "Proposal", "Closed Lost", "Closed Won"
                     ]
                 },
@@ -2111,44 +2312,57 @@
                     "decimals": 2
                 },
                 {
-                    "name":       "Type",
-                    "label":      "Opportunity Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Type",
+                    "label": "Opportunity Type",
+                    "type":  "string",
+                    "value": [
                         "Upgrade", "Replacement", "Downgrade", "New Customer", "Upsell", "Cross Sell", "Other"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -2228,38 +2442,58 @@
                     "decimals": 2
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
         {
-            "name":          "Organization",
-            "label":         "Organization",
-            "plural":        "Organizations",
-            "api_read_only": true,
-            "name_field":    "Name",
-            "field":         [
+            "name":       "Organization",
+            "label":      "Organization",
+            "plural":     "Organizations",
+            "validation": {
+                "api_read_only": {
+                    "on_fail": "ignore_field"
+                }
+            },
+            "name_field": "Name",
+            "field":      [
                 {
                     "name":  "Id",
                     "label": "Organization ID",
@@ -2297,11 +2531,10 @@
                     "length":     80
                 },
                 {
-                    "name":       "OrganizationType",
-                    "label":      "Organization Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "OrganizationType",
+                    "label": "Organization Type",
+                    "type":  "string",
+                    "value": [
                         "Type 1", "Type 2", "Type 3"
                     ]
                 },
@@ -2329,33 +2562,49 @@
                     "length": 20
                 },
                 {
-                    "name":   "Street",
-                    "label":  "Street",
-                    "type":   "string"
+                    "name":  "Street",
+                    "label": "Street",
+                    "type":  "string"
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
@@ -2393,11 +2642,10 @@
                     "ref_field": "Id"
                 },
                 {
-                    "name":       "Influence",
-                    "label":      "Influence",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Influence",
+                    "label": "Influence",
+                    "type":  "string",
+                    "value": [
                         "Supporter", "Detractor", "Champion", "Influencer", "Reference", "Consultant", "Specialist", "Regulator"
                     ]
                 },
@@ -2409,11 +2657,10 @@
                     "length":     80
                 },
                 {
-                    "name":       "Role",
-                    "label":      "Role",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Role",
+                    "label": "Role",
+                    "type":  "string",
+                    "value": [
                         "Advertiser", "Agency", "Broker", "Consultant", "Contractor", "Developer", "Dealer", "Distributor", "Institution", "Lender", "Supplier",
                         "Integrator", "Reseller", "Other"
                     ]
@@ -2433,28 +2680,44 @@
                     "ref_field": "Id"
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
@@ -2513,11 +2776,10 @@
                     "length": 255
                 },
                 {
-                    "name":       "ProductFamily",
-                    "label":      "Product Family",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "ProductFamily",
+                    "label": "Product Family",
+                    "type":  "string",
+                    "value": [
                         "Installation", "Support", "General", "Enterprise"
                     ]
                 },
@@ -2528,38 +2790,58 @@
                     "length": 80
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
         {
-            "name":          "Role",
-            "label":         "Role",
-            "plural":        "Roles",
-            "api_read_only": true,
-            "name_field":    "Name",
-            "field":         [
+            "name":       "Role",
+            "label":      "Role",
+            "plural":     "Roles",
+            "validation": {
+                "api_read_only": {
+                    "on_fail": "ignore_field"
+                }
+            },
+            "name_field": "Name",
+            "field":      [
                 {
                     "name":  "Id",
                     "label": "Role ID",
@@ -2567,11 +2849,10 @@
                     "type": "id"
                 },
                 {
-                    "name":       "Access",
-                    "label":      "Access",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Access",
+                    "label": "Access",
+                    "type":  "string",
+                    "value": [
                         "none", "read", "create,read", "read,update", "create,read,update", "create,read,update,delete", "create,read,update,delete,admin"
                     ]
                 },
@@ -2601,28 +2882,44 @@
                     "length": 32000
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 }
             ]
         },
@@ -2669,11 +2966,10 @@
                     "length": 40
                 },
                 {
-                    "name":       "Status",
-                    "label":      "Status",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Status",
+                    "label": "Status",
+                    "type":  "string",
+                    "value": [
                         "Submitted", "Reviewed", "Duplicate", "In Queue", "Postponed", "Declined", "Implemented"
                     ]
                 },
@@ -2683,44 +2979,57 @@
                     "type":  "int"
                 },
                 {
-                    "name":       "Type",
-                    "label":      "Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "Type",
+                    "label": "Type",
+                    "type":  "string",
+                    "value": [
                         "Bug", "Educational", "Feature Request", "Limitation", "On Roadmap"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Owner ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Owner ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -2761,11 +3070,10 @@
                     "length": 255
                 },
                 {
-                    "name":       "CallType",
-                    "label":      "Call Type",
-                    "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "name":  "CallType",
+                    "label": "Call Type",
+                    "type":  "string",
+                    "value": [
                         "Internal", "Inbound", "Outbound"
                     ]
                 },
@@ -2813,8 +3121,7 @@
                     "label":      "Priority",
                     "allow_null": false,
                     "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "value":      [
                         "High", "Normal", "Low"
                     ]
                 },
@@ -2830,8 +3137,7 @@
                     "label":      "Status",
                     "allow_null": false,
                     "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "value":      [
                         "Not Started", "In Progress", "Completed", "Waiting", "Deferred"
                     ]
                 },
@@ -2840,41 +3146,54 @@
                     "label":      "Subject",
                     "allow_null": false,
                     "type":       "string",
-                    "validation": "picklist",
-                    "values":     [
+                    "value":      [
                         "Email", "Phone Call", "Instant Message", "Discussion", "Letter"
                     ]
                 },
                 {
-                    "name": "CreatedById",
-                    "label": "Created By ID",
-                    "type": "user_id_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedById",
+                    "label":      "Created By ID",
+                    "type":       "user_id_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "CreatedDate",
-                    "label": "Created Date",
-                    "type": "timestamp_on_create",
-                    "api_read_only": true
+                    "name":       "CreatedDate",
+                    "label":      "Created Date",
+                    "type":       "timestamp_on_create",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedById",
-                    "label": "Last Modified By ID",
-                    "type": "user_id_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedById",
+                    "label":      "Last Modified By ID",
+                    "type":       "user_id_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name": "LastModifiedDate",
-                    "label": "Last Modified Date",
-                    "type": "timestamp_on_update",
-                    "api_read_only": true
+                    "name":       "LastModifiedDate",
+                    "label":      "Last Modified Date",
+                    "type":       "timestamp_on_update",
+                    "validation": {
+                        "api_read_only": {
+                            "on_fail": "ignore_field"
+                        }
+                    }
                 },
                 {
-                    "name":      "OwnerId",
-                    "label":     "Assigned To ID",
-                    "type":      "reference",
-                    "ref_table": "df_sys_user",
-                    "ref_field": "Id"
+                    "name":  "OwnerId",
+                    "label": "Assigned To ID",
+                    "type":  "user_id"
                 }
             ]
         },
@@ -4984,7 +5303,7 @@
                     "label": "Type",
                     "type":  "string",
                     "value": [
-                        "No Task Type", "Project Task", "Sales Support", "Training &amp; Education", "Practice Development", "Internal Meeting",
+                        "No Task Type", "Project Task", "Sales Support", "Training & Education", "Practice Development", "Internal Meeting",
                         "Performance Management", "Enterprise Account Support", "General Administration", "Paid Time Off", "Recruiting and Interviewing",
                         "Instructing", "On-site Support"
                     ]
